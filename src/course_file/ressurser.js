@@ -76,5 +76,5 @@ const resources = [
   },
 ];
 
-
+//eksporterer de, slik at resources blir tilgjengelig i komponenten
 export default resources;
