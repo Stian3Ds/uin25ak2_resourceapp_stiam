@@ -1,30 +1,32 @@
 import React from "react"
-import resourcesData from '../course_file/ressurser'
+import dataFromSchool from '../course_file/ressurser';
 
 export default function Resources({ category }) {
 
-    const filteredResources = resourcesData.filter(
-        (resource) => resource.category === category
+    const dataWanted = dataFromSchool.filter(
+        (resource) => resource.category === category.toLowerCase()
+        
     )
+    console.log(dataWanted)
 
     return (
+
         <section>
-            <h1>Ressurser for {category} </h1>
-            {filteredResources.map((resource, index) => (
-                <article key={index} >
-                    <h2>{resource.category}</h2>
-                    <p>{resource.text}</p>
-                    <ul>
-                        {resource.sources.map((source, i) => (
-                            <li key={i}>
-                                <a href={source.url} target="_blank" rel="noopener noreferrer"> {source.title}</a>
+        <h1>{category}</h1>
+        {dataWanted.length ? (
+          dataWanted.map((resource, index) => (
+            <article key={index}>
+              <h2>{resource.title}</h2>
+              <p>
+                <a href={resource.url} target="_blank" > {resource.title}
+                </a>
+              </p>
+            </article>
+          ))
+        ) : (
+          <p>{category}</p>
+        )}
+      </section>
 
-                            </li>
-                        ) ) }
-                    </ul>
-
-                </article>
-            )  )  }
-        </section>
     )
 }

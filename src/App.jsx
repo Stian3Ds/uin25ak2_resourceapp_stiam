@@ -1,13 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import { Routes, Route, } from 'react-router-dom'
+import Layout from './components/Layout'
+import Resources from './components/Resources'
 import '../src/styles/style.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-      <h1>Ressurser</h1>
+        <Layout>
+          <Routes>
+            <Route path="/html" element={<Resources category="HTML" />} />
+            <Route path="/css" element={<Resources category="CSS" />} />
+            <Route path="/javascript" element={<Resources category="JavaScript" />} />
+            <Route path="/react" element={<Resources category="React" />} />
+            <Route path="/sanity" element={<Resources category="Sanity and headless CMS" />} />
+            <Route path="*" element={<Resources category="HTML" />} />
+          </Routes>
+        </Layout>
   )
 }
 

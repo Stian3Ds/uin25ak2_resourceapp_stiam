@@ -9,7 +9,7 @@ export default function Layout({ children }) {
             <Nav />
         </header>
         <main>
-            <PageTitle title="Mine Ressurser" />
+            <PageTitle />
             {children}
         </main>
         </>
