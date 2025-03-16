@@ -1,5 +1,17 @@
-export default function Layout() {
+import React from "react"
+import Nav from '../components/Nav'
+import PageTitle from '../components/PageTitle'
+
+export default function Layout({ children }) {
     return (
-        <h1>Layout</h1>
+        <>
+        <header>
+            <Nav />
+        </header>
+        <main>
+            <PageTitle title="Mine Ressurser" />
+            {children}
+        </main>
+        </>
     )
 }

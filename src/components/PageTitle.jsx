@@ -1,5 +1,7 @@
-export default function PageTitle() {
+import React from "react"
+
+export default function PageTitle({ title }) {
     return (
-        <h1>PageTitle</h1>
+        <h1>{title}</h1>
     )
 }
