@@ -1,6 +1,7 @@
+import PageTitle from './PageTitle';
 import dataFromSchool from '../course_file/ressurser';
 
-export default function Resources({ category }) {
+export default function Resources({ category, title }) {
 
     const correctCategory = category === 'sanity' ? 'headless-cms' : category
 
@@ -13,7 +14,7 @@ export default function Resources({ category }) {
     return (
 
         <>
-        <h2>{category.toUpperCase()}</h2>
+        <PageTitle title={title} />
             <ul>
                 {dataWanted.map((resource, index) => (
                 <li key={index}>

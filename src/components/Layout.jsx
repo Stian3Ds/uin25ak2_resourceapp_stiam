@@ -9,7 +9,6 @@ export default function Layout({ children }) {
         </header>
         <main>
             <article>
-                <PageTitle />
                 {children}
             </article>
         </main>
