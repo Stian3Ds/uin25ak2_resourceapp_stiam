@@ -1,32 +1,30 @@
-import React from "react"
 import dataFromSchool from '../course_file/ressurser';
 
 export default function Resources({ category }) {
 
+    const correctCategory = category === 'sanity' ? 'headless-cms' : category
+
     const dataWanted = dataFromSchool.filter(
-        (resource) => resource.category === category.toLowerCase()
+        resource => resource.category.toLowerCase() === correctCategory.toLowerCase()
         
     )
     console.log(dataWanted)
 
     return (
 
-        <section>
-        <h1>{category}</h1>
-        {dataWanted.length ? (
-          dataWanted.map((resource, index) => (
-            <article key={index}>
-              <h2>{resource.title}</h2>
-              <p>
-                <a href={resource.url} target="_blank" > {resource.title}
-                </a>
-              </p>
-            </article>
-          ))
-        ) : (
-          <p>{category}</p>
-        )}
-      </section>
+        <>
+        <h2>{category.toUpperCase()}</h2>
+            <ul>
+                {dataWanted.map((resource, index) => (
+                <li key={index}>
+                    <a href={resource.url} target="_blank">
+                    {resource.title}
+                    </a>
+                </li>
+                ))}
+            </ul>
+
+      </>
 
     )
 }

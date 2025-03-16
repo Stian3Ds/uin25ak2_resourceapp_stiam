@@ -59,17 +59,19 @@ main {
     flex-wrap: wrap;
     justify-content: space-evenly;
 
-    #listResources {
-        display: flex;
-        flex-wrap: wrap;
-        width: 80%;
-        height: 500px;
-        background-color: var(--white);
+
+  
 
         article {
             padding: 5rem;
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            height: 500px;
+            background-color: var(--white);
 
             h2 {
+                width: 100%;
                 color: var(--dark-blue);
                 font-size: 2rem;
                 font-weight: 800;
@@ -89,7 +91,3 @@ main {
         }
     }
 
-
-
-
-}
